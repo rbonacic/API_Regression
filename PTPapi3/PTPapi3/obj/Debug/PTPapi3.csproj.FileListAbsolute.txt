@@ -1,0 +1,5 @@
+C:\Stash\PTPapi3\PTPapi3\bin\Debug\PTPapi3.dll
+C:\Stash\PTPapi3\PTPapi3\bin\Debug\PTPapi3.pdb
+C:\Stash\PTPapi3\PTPapi3\obj\Debug\PTPapi3.dll
+C:\Stash\PTPapi3\PTPapi3\obj\Debug\PTPapi3.pdb
+C:\Stash\PTPapi3\PTPapi3\obj\Debug\PTPapi3.csprojResolveAssemblyReference.cache
