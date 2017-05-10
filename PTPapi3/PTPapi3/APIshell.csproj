@@ -67,9 +67,10 @@
   <ItemGroup>
     <Compile Include="ApiConnection.cs" />
     <Compile Include="apiresponse.cs" />
-    <Compile Include="FujiApi.cs" />
-    <Compile Include="FujiLayout.cs" />
-    <Compile Include="FujiPayloadVisit.cs" />
+    <Compile Include="ApiCalls.cs" />
+    <Compile Include="Layout.cs" />
+    <Compile Include="PayloadVisit.cs" />
+    <Compile Include="Rootobject.cs" />
     <Compile Include="ssoUser.cs" />
     <Compile Include="TestData.cs" />
   </ItemGroup>

@@ -3,7 +3,7 @@ namespace PTPapi3
     public class Rootobject
     {
 
-        public string facilityId { get; set; }
+        public int facilityId { get; set; }
         public string facilityAssociationTypeCode { get; set; }
         public string visitServiceDate { get; set; }
         public string serviceCategoryCode { get; set; }

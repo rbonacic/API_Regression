@@ -6,38 +6,14 @@ using System.Threading.Tasks;
 
 namespace PTPapi3
 {
-    public class TestData
+    public class TestData: Rootobject
     {
-        public ssoUser ssoLF = new ssoUser()
+        public ssoUser TestUser = new ssoUser()
         {
-            userId = "126LF",
-            firstName = "LF-BTEST",
-            lastName = "UserLF",
-            facilityId = 528
-        };
-
-        public ssoUser ssoLFAdmin = new ssoUser()
-        {
-            userId = "126LFA",
-            firstName = "LFA-BTEST",
-            lastName = "UserLFA",
-            facilityId = 528
-        };
-
-        public ssoUser ssoLFReport = new ssoUser()
-        {
-            userId = "126LFR",
-            firstName = "LFR-BTEST",
-            lastName = "UserLFR",
-            facilityId = 528
-        };
-
-        public ssoUser ssoLFReportAdmin = new ssoUser()
-        {
-            userId = "126LFRA",
-            firstName = "LFRA-BTEST",
-            lastName = "UserLFRA",
-            facilityId = 528
+            userId = "9999",
+            firstName = "9999",
+            lastName = "999",
+            facilityId = 999
         };
     }
 }

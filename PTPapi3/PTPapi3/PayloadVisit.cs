@@ -6,55 +6,55 @@ using System.Threading.Tasks;
 
 namespace PTPapi3
 {
-    public class FujiPayloadVisit
+    public class PayloadVisit:Rootobject
     {
 
-        public fujiRootobject payloadVisit = new fujiRootobject()
+        public Rootobject payloadVisit = new Rootobject()
         {
-            facilityId = "528",
-            facilityAssociationTypeCode = "1",
+            facilityId = "999",
+            facilityAssociationTypeCode = "999",
             visitServiceDate = "2017-01-30",
             serviceCategoryCode = "CLI",
 
             patient = new Patient()
             {
-                firstName = "Jeff",
+                firstName = "TEST",
                 middleName = "M",
-                lastName = "Adams",
+                lastName = "TEST",
                 suffix = "",
-                patientAccountNumber = "B1ELGINA8",
-                medicalRecordNumber = "HEY820582637",
+                patientAccountNumber = "TEST",
+                medicalRecordNumber = "TEST",
                 birthDate = "1986-07-28",
                 genderCode = "M",
             },
             guarantor = new Guarantor()
             {
-                firstName = "Jeff",
-                middleName = "M",
-                lastName = "Adams",
+                firstName = "TEST",
+                middleName = "T",
+                lastName = "TEST",
                 suffix = "",
                 birthDate = "1986-07-28",
                 genderCode = "M",
-                phone = "912-425-7349",
+                phone = "912-555-5555",
 
                 address = new Address()
                 {
-                    line1 = "603 DAVIS STREET",
-                    city = "SYLVANIA",
-                    stateCode = "GA",
-                    zipCode = "30467"
+                    line1 = "603 TEST STREET",
+                    city = "TEST",
+                    stateCode = "TN",
+                    zipCode = "37211"
                 }
             },
             orderingProvider = new Orderingprovider()
             {
-                firstName = "Mike",
-                middleName = "fi",
-                lastName = "Thomas",
+                firstName = "TEST",
+                middleName = "Test",
+                lastName = "Test",
                 suffix = "",
-                npi = "1326043548"
+                npi = "9999999"
             },
 
-            orderControlNumber = "2345234",
+            orderControlNumber = "999999",
 
             coverages = new Coverage[] {
                         new Coverage()
@@ -63,14 +63,14 @@ namespace PTPapi3
 
                             subscriber = new Subscriber()
                             {
-                            firstName = "CLIFFORD",
-                            middleName = "M",
-                            lastName = "ADAMS",
+                            firstName = "Test",
+                            middleName = "t",
+                            lastName = "Test",
                             suffix = "",
                             birthDate = "1986-07-28",
                             genderCode = "M",
                             ssn = "",
-                            memberId = "HEY820582637",
+                            memberId = "99999999",
                             patientRelationship = "Self"
                             },
                             serviceTypeCodes = new string[1]{"30"}
@@ -82,13 +82,13 @@ namespace PTPapi3
                    {
                         new Service
                         {
-                            procedureCode = "57500",
+                            procedureCode = "9999",
                             description = "Hello World",
                             dateEntered = "2017-01-10",
                             units = 1,
-                            accessionNumber = "1321467",
+                            accessionNumber = "999999",
                             procedureChargeAmount = "1235.50",
-                            diagnosisCodes = new string[2] {"m5003","m5001"}
+                            diagnosisCodes = new string[2] {"999","999"}
                         }
                    }
         };

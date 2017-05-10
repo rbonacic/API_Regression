@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RestSharp;
-using Availity;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
-using Newtonsoft;
+using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RestSharp;
 
-namespace Availity.QA
+namespace PTPapi3
 {
     public class Tools
     {
@@ -32,54 +27,48 @@ namespace Availity.QA
         }
     }
 
-    public class EnvFuji
+    public class Env
     {
+        /// <summary>
+        /// Change to meet Enviroment requirements 
+        /// </summary>
         public string UriVisit { get; set; }
         public string UriSSO { get; set; }
         public string Key { get; set; }
         public string Secret { get; set; }
         public string Callback { get; set; }
         
-        public EnvFuji(string Environment)
+        public Env(string environment)
         {
-            switch (Environment.ToUpper())
+            switch (environment.ToUpper())
             {
-                case "QUA":
-                    this.QUA();
+                case "QA":
+                    this.QA();
                     break;
-                case "TV":
-                    this.TV();
+                case "Dev":
+                    this.Dev();
                     break;
             }
 
         }
-        private void QUA()
+        private void QA()
         {
-            this.UriVisit = "https://qa-patientaccess.availity.com/public/api/v1/visits";
-            this.UriSSO = "https://qa-patientaccess.availity.com/public/api/v1/sso";
-            this.Key = "vbc9gtwhj8d7mfhyv3zwp67h";
-            this.Secret = "SECRET";
-            this.Callback = "https://tst-rcm-mirth.availity.net/webhooks/api/v1/notify";
+            this.UriVisit = "https://EnterURI.com";
+        
         }
-        private void TV()
+        private void Dev()
         {
-            this.UriVisit = "https://qa-patientaccess.availity.com/public/api/v1/visits";
-            this.UriSSO = "https://qa-patientaccess.availity.com/public/api/v1/sso";
-            this.Key = "vbc9gtwhj8d7mfhyv3zwp67h";
-            this.Secret = "SECRET";
-            this.Callback = "https://tst-rcm-mirth.availity.net/webhooks/api/v1/notify";
+            this.UriVisit = "https://EnterURI.com";
+           
         }
 
     }
 
     public class Api
     {
-        ////public Api()
-        ////{
+     
 
-        ////}
-
-        public string ApiCall(EnvFuji env, Method type, PTPapi3.ssoUser payload)
+        public string ApiCall(Env env, Method type, ssoUser payload)
         {
             try
             {
@@ -104,43 +93,7 @@ namespace Availity.QA
                 return ex.Message;
             }
         }
-
-
-        public string ApiCall(EnvFuji env, Method type, PTPapi3.fujiRootobject payload)
-        {
-            try
-            {
-                //const string Uri = "https://qa-patientaccess.availity.com/public/api/v1/visits";
-                //const string Key = "vbc9gtwhj8d7mfhyv3zwp67h";
-                //const string Secret = "SECRET";
-                //const string Callback = "https://tst-rcm-mirth.availity.net/webhooks/api/v1/notify";
-
-                //EnvFuji env = new EnvFuji("QUA");
-                
-                
-
-                var client = new RestClient(env.UriVisit);
-                var request = new RestRequest(type);  //Method.POST
-
-                
-                request.AddHeader("X-Api-Key", env.Key);
-                request.AddHeader("sig", Tools.sha256(env.Key + env.Secret + Tools.epochTime()));
-                request.AddHeader("X-CALLBACK-URL", env.Callback);
-                request.AddHeader("Content-Type", "application/json");
-
-
-                request.RequestFormat = DataFormat.Json;
-                request.AddBody(payload);
-                var response = client.Execute(request); //execute 
-                {
-                    if (response.StatusCode == HttpStatusCode.OK) { Assert.AreEqual("", response.ContentEncoding); }
-                    return response.Content;
-                }
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
+       
         }
     }
-}
+
