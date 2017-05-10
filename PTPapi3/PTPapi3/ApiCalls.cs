@@ -30,7 +30,7 @@ namespace PTPapi3
             try
             {
                 Api api = new Api();
-                Env env = new Env("QUA");
+                Env env = new Env("QA");
 
                 PayloadVisit fpv = new PayloadVisit();
                 fpv.payloadVisit.patient.patientAccountNumber = "QA" + DateTime.Now.ToString("yyMMdd-HHmmss");
@@ -44,7 +44,7 @@ namespace PTPapi3
                 
                 //Get the SSO User Token ID
                 TestData usr = new TestData();
-                string tokenID = api.ApiCall(env, Method.POST, usr.ssoLFAdmin); //Post SSO user for token
+                string tokenID = api.ApiCall(env, Method.POST, usr.TestUser); //Post SSO user for token
             
                 //parse for Accesstoken
                 JObject accessTokenObject = JObject.Parse(tokenID);
